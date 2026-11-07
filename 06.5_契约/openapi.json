@@ -1,0 +1,58 @@
+{
+  "openapi": "3.0.0",
+  "info": { "title": "nestjs-agent-workbench API", "version": "1.0.0" },
+  "paths": {
+    "/auth/register": {
+      "post": {
+        "summary": "注册",
+        "requestBody": { "content": { "application/json": { "schema": {
+          "type": "object",
+          "required": ["username", "password"],
+          "properties": { "username": {"type":"string","minLength":3,"maxLength":50}, "password": {"type":"string","minLength":6,"maxLength":100} }
+        }}}},
+        "responses": { "201": {"description":"注册成功"}, "409": {"description":"用户名已存在"}, "400": {"description":"参数校验失败"} }
+      }
+    },
+    "/auth/login": {
+      "post": {
+        "summary": "登录",
+        "requestBody": { "content": { "application/json": { "schema": {
+          "type": "object",
+          "required": ["username", "password"],
+          "properties": { "username": {"type":"string"}, "password": {"type":"string"} }
+        }}}},
+        "responses": { "200": {"description":"返回 access_token + user"}, "401": {"description":"用户名或密码错误"} }
+      }
+    },
+    "/auth/logout": {
+      "post": {
+        "summary": "登出（JWT 守卫）",
+        "responses": { "204": {"description":"已登出"}, "401": {"description":"未登录"} }
+      }
+    },
+    "/conversations": {
+      "get": { "summary": "当前用户对话列表（Redis 缓存）", "responses": { "200": {"description":"对话数组"}, "401": {"description":"未登录"} } },
+      "post": {
+        "summary": "创建对话",
+        "requestBody": { "content": { "application/json": { "schema": {
+          "type": "object",
+          "properties": { "title": {"type":"string","maxLength":100} }
+        }}}},
+        "responses": { "201": {"description":"新建对话"}, "401": {"description":"未登录"} }
+      }
+    },
+    "/conversations/{id}/messages": {
+      "get": {
+        "summary": "消息历史分页",
+        "parameters": [
+          { "name": "id", "in": "path", "required": true, "schema": {"type":"integer"} },
+          { "name": "page", "in": "query", "schema": {"type":"integer","default":1} },
+          { "name": "size", "in": "query", "schema": {"type":"integer","default":20} }
+        ],
+        "responses": { "200": {"description":"{list,total,page,size}"}, "401": {"description":"未登录"}, "403": {"description":"无权访问"}, "404": {"description":"对话不存在"} }
+      }
+    },
+    "/health": { "get": { "summary": "健康检查", "responses": { "200": {"description":"{status,uptime}"} } } },
+    "/admin/users": { "get": { "summary": "admin 用户列表（AdminGuard）", "responses": { "200": {"description":"用户数组"}, "401": {"description":"未登录"}, "403": {"description":"需要 admin"} } } }
+  }
+}

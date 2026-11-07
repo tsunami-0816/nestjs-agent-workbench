@@ -1,0 +1,12 @@
+﻿{
+    "code":  0,
+    "data":  {
+                 "access_token":  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsInVzZXJuYW1lIjoic21va2V1c2VyIiwicm9sZSI6InVzZXIiLCJqdGkiOiI0NWE4MGI2OC0wNTc2LTQ0ZDMtYTlkMy0zYjk0ZDdiMWE1ZjQiLCJpYXQiOjE3OTQwNzYzOTUsImV4cCI6MTc5NDA4MzU5NX0.Kk0DcoCFeG_CMIfNfx9LdCJrCt5iwFh1wRmWEsIDNEs",
+                 "user":  {
+                              "id":  2,
+                              "username":  "smokeuser",
+                              "role":  "user"
+                          }
+             },
+    "message":  "ok"
+}

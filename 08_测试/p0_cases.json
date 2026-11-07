@@ -1,0 +1,12 @@
+{
+  "p0_cases": [
+    {"id": "P0-001", "name": "注册成功", "endpoint": "POST /auth/register", "expected": 201},
+    {"id": "P0-002", "name": "登录返回token", "endpoint": "POST /auth/login", "expected": 200},
+    {"id": "P0-003", "name": "未带token访问受保护接口401", "endpoint": "GET /conversations", "expected": 401},
+    {"id": "P0-004", "name": "创建对话", "endpoint": "POST /conversations", "expected": 201},
+    {"id": "P0-005", "name": "对话列表", "endpoint": "GET /conversations", "expected": 200},
+    {"id": "P0-006", "name": "消息历史分页", "endpoint": "GET /conversations/{id}/messages", "expected": 200},
+    {"id": "P0-007", "name": "WS流式发消息收到chunk", "endpoint": "WS /ws", "expected": "chunk+done"},
+    {"id": "P0-008", "name": "登出黑名单", "endpoint": "POST /auth/logout", "expected": "旧token 401"}
+  ]
+}

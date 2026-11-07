@@ -1,0 +1,5 @@
+base_url: http://localhost:8089
+ws_url: ws://localhost:8089/ws
+# 测试账号（conftest 会自动注册临时账号，这里只用于已知账号）
+smoke_user: smokeuser
+smoke_pass: smoke1234

@@ -1,0 +1,62 @@
+{
+  "total": 4,
+  "by_severity": {
+    "error": 0,
+    "warning": 3,
+    "advisory": 1
+  },
+  "by_category": {
+    "quality": {
+      "error": 0,
+      "warning": 3,
+      "advisory": 1
+    }
+  },
+  "findings": [
+    {
+      "antipattern": "low-contrast",
+      "name": "Low contrast text",
+      "description": "Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast between text and background.",
+      "severity": "warning",
+      "category": "quality",
+      "file": "http://localhost:5183",
+      "line": 0,
+      "snippet": "2.8:1 (need 4.5:1) — text #409eff on #ffffff",
+      "selector": "#tab-login"
+    },
+    {
+      "antipattern": "low-contrast",
+      "name": "Low contrast text",
+      "description": "Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast between text and background.",
+      "severity": "warning",
+      "category": "quality",
+      "file": "http://localhost:5183",
+      "line": 0,
+      "snippet": "placeholder \"用户名\" 2.3:1 (need 4.5:1) — text #a8abb2 on #ffffff",
+      "selector": "#el-id-9063-4"
+    },
+    {
+      "antipattern": "low-contrast",
+      "name": "Low contrast text",
+      "description": "Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast between text and background.",
+      "severity": "warning",
+      "category": "quality",
+      "file": "http://localhost:5183",
+      "line": 0,
+      "snippet": "placeholder \"密码\" 2.3:1 (need 4.5:1) — text #a8abb2 on #ffffff",
+      "selector": "#el-id-9063-5"
+    },
+    {
+      "antipattern": "low-contrast",
+      "name": "Low contrast text",
+      "description": "Text does not meet WCAG AA contrast requirements (4.5:1 for body, 3:1 for large text). Increase the contrast between text and background.",
+      "severity": "advisory",
+      "category": "quality",
+      "file": "http://localhost:5183",
+      "line": 0,
+      "snippet": "2.8:1 (need 4.5:1) — text #ffffff on #409eff",
+      "selector": "#pane-login > form.el-form.el-form--default > button.el-button.el-button--primary > span",
+      "_component_lib_default": true
+    }
+  ]
+}

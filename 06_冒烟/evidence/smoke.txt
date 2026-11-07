@@ -1,0 +1,12 @@
+﻿=== 9. /conversations ===
+code=0 count=1
+  conv id=6 title=?????? userId=2 updatedAt=2026-11-07T10:32:07.132Z
+
+=== 10. /conversations/6/messages ===
+code=0 total=0 listCount=0
+
+=== 12. user -> /admin/users (应 403) ===
+[403] 
+
+=== 13. logout then old token (应 401) ===
+[401] 
